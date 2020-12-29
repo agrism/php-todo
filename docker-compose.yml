@@ -1,0 +1,45 @@
+version: "3.1"
+services:
+  postgres:
+    image: postgres:11-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: actix
+      POSTGRES_USER: actix
+      POSTGRES_DB: actix
+    ports:
+      - 5433:5432
+    deploy:
+      resources:
+        limits:
+          memory: '512M'
+          cpus: '1'
+  todo-web:
+    image: nginx:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/code
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - todo-php
+  todo-php:
+    build: .
+    links:
+      - postgres
+    volumes:
+      - .:/code
+    environment:
+      SERVER.HOST: 127.0.0.1
+      SERVER.PORT: 8081
+      PG.USER: actix
+      PG.PASSWORD: actix
+      PG.HOST: postgres
+      PG.PORT: 5432
+      PG.DBNAME: actix
+      PG.POOL.MAX_SIZE: 30
+    deploy:
+      resources:
+        limits:
+          memory: '1G'
+          cpus: '2'
