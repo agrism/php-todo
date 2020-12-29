@@ -75,39 +75,39 @@ Server Hostname:        127.0.0.1
 Server Port:            8081
 
 Document Path:          /todos
-Document Length:        36 bytes
+Document Length:        39 bytes
 
 Concurrency Level:      30
-Time taken for tests:   598.692 seconds
+Time taken for tests:   489.855 seconds
 Complete requests:      100000
-Failed requests:        99102
-   (Connect: 0, Receive: 0, Length: 99102, Exceptions: 0)
+Failed requests:        0
 Keep-Alive requests:    0
-Total transferred:      19289306 bytes
+Total transferred:      19400000 bytes
 Total body sent:        19700000
-HTML transferred:       3789306 bytes
-Requests per second:    167.03 [#/sec] (mean)
-Time per request:       179.607 [ms] (mean)
-Time per request:       5.987 [ms] (mean, across all concurrent requests)
-Transfer rate:          31.46 [Kbytes/sec] received
-                        32.13 kb/s sent
-                        63.60 kb/s total
+HTML transferred:       3900000 bytes
+Requests per second:    204.14 [#/sec] (mean)
+Time per request:       146.956 [ms] (mean)
+Time per request:       4.899 [ms] (mean, across all concurrent requests)
+Transfer rate:          38.68 [Kbytes/sec] received
+                        39.27 kb/s sent
+                        77.95 kb/s total
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   1.2      0     120
-Processing:    14  179  71.8    172    1260
-Waiting:       12  179  71.8    172    1259
-Total:         14  179  71.8    172    1260
+Connect:        0    0   1.1      0     134
+Processing:    11  147  50.7    143    1325
+Waiting:        9  146  50.7    143    1325
+Total:         11  147  50.6    143    1326
 
 Percentage of the requests served within a certain time (ms)
-  50%    172
-  66%    182
-  75%    189
-  80%    194
-  90%    209
-  95%    225
-  98%    249
-  99%    275
- 100%   1260 (longest request)
+  50%    143
+  66%    152
+  75%    158
+  80%    162
+  90%    178
+  95%    204
+  98%    238
+  99%    257
+ 100%   1326 (longest request)
+
 ```
