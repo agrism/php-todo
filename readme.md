@@ -1,3 +1,11 @@
+# Pre work
+
+### 1. Init db
+```bash
+curl --request GET http://127.0.0.1:8081/init-database
+```
+
+
 # Benchmarks
 
 ### 1. Read test
@@ -21,37 +29,38 @@ Server Hostname:        127.0.0.1
 Server Port:            8081
 
 Document Path:          /todos/1
-Document Length:        25 bytes
+Document Length:        34 bytes
 
 Concurrency Level:      30
-Time taken for tests:   584.653 seconds
+Time taken for tests:   469.531 seconds
 Complete requests:      100000
 Failed requests:        0
 Keep-Alive requests:    0
-Total transferred:      18000000 bytes
-HTML transferred:       2500000 bytes
-Requests per second:    171.04 [#/sec] (mean)
-Time per request:       175.396 [ms] (mean)
-Time per request:       5.847 [ms] (mean, across all concurrent requests)
-Transfer rate:          30.07 [Kbytes/sec] received
+Total transferred:      18900000 bytes
+HTML transferred:       3400000 bytes
+Requests per second:    212.98 [#/sec] (mean)
+Time per request:       140.859 [ms] (mean)
+Time per request:       4.695 [ms] (mean, across all concurrent requests)
+Transfer rate:          39.31 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   1.1      0      95
-Processing:    12  175  76.9    167    1282
-Waiting:       10  175  76.9    167    1282
-Total:         12  175  76.9    168    1282
+Connect:        0    0   1.6      0     197
+Processing:    12  140  43.3    137    1247
+Waiting:       10  140  43.2    137    1247
+Total:         12  141  43.1    137    1247
 
 Percentage of the requests served within a certain time (ms)
-  50%    168
-  66%    176
-  75%    183
-  80%    187
-  90%    202
-  95%    218
-  98%    241
-  99%    269
- 100%   1282 (longest request)
+  50%    137
+  66%    145
+  75%    151
+  80%    155
+  90%    170
+  95%    194
+  98%    225
+  99%    242
+ 100%   1247 (longest request)
+
 ```
 
 ### 2. Write test
@@ -78,36 +87,35 @@ Document Path:          /todos
 Document Length:        39 bytes
 
 Concurrency Level:      30
-Time taken for tests:   489.855 seconds
+Time taken for tests:   500.543 seconds
 Complete requests:      100000
 Failed requests:        0
 Keep-Alive requests:    0
 Total transferred:      19400000 bytes
 Total body sent:        19700000
 HTML transferred:       3900000 bytes
-Requests per second:    204.14 [#/sec] (mean)
-Time per request:       146.956 [ms] (mean)
-Time per request:       4.899 [ms] (mean, across all concurrent requests)
-Transfer rate:          38.68 [Kbytes/sec] received
-                        39.27 kb/s sent
-                        77.95 kb/s total
+Requests per second:    199.78 [#/sec] (mean)
+Time per request:       150.163 [ms] (mean)
+Time per request:       5.005 [ms] (mean, across all concurrent requests)
+Transfer rate:          37.85 [Kbytes/sec] received
+                        38.43 kb/s sent
+                        76.28 kb/s total
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   1.1      0     134
-Processing:    11  147  50.7    143    1325
-Waiting:        9  146  50.7    143    1325
-Total:         11  147  50.6    143    1326
+Connect:        0    0   1.1      0     111
+Processing:    14  150  53.4    145    1231
+Waiting:       12  150  53.3    145    1231
+Total:         14  150  53.3    145    1231
 
 Percentage of the requests served within a certain time (ms)
-  50%    143
-  66%    152
-  75%    158
-  80%    162
-  90%    178
-  95%    204
-  98%    238
-  99%    257
- 100%   1326 (longest request)
-
+  50%    145
+  66%    153
+  75%    160
+  80%    164
+  90%    180
+  95%    201
+  98%    230
+  99%    250
+ 100%   1231 (longest request)
 ```

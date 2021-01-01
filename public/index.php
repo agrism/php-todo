@@ -11,7 +11,8 @@ $segments = array_filter($segments);
 $segments = array_values($segments);
 
 
-if ('init-database' == ($segments[0] ?? false)) {
+if ('init-database' == ($segments[0] ?? false)
+	&& 'GET' == ($_SERVER['REQUEST_METHOD'] ?? false)) {
 	\Todo\Controllers\InitDatabaseController::factory()->up();
 	return;
 }
